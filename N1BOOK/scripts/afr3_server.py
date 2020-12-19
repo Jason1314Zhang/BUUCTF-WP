@@ -17,17 +17,18 @@ app.secret_key = key
 def n1page():
     if request.method != "POST":
         return redirect(url_for("index"))
-        n1code = request.form.get("n1code") or None if n1code is not None:
+    n1code = request.form.get("n1code") or None 
+    if n1code is not None:
         n1code = n1code.replace(".", "").replace(
             "_", "").replace("{", "").replace("}", "")
-        if "n1code" not in session or session['n1code'] is None:
-            session['n1code'] = n1code
-            template = None
-            if session['n1code'] is not None:
-                template = '''<h1>N1 Page</h1> <div class="row> <div class="col-md-6 col-md-offset-3 center"> Hello : %s, why you don't look at our <a href='/article?name=article'>article</a>? </div> </div> ''' % session[
-                    'n1code']
-                session['n1code'] = None
-                return render_template_string(template)
+    if "n1code" not in session or session['n1code'] is None:
+        session['n1code'] = n1code
+        template = None
+    if session['n1code'] is not None:
+        template = '''<h1>N1 Page</h1> <div class="row> <div class="col-md-6 col-md-offset-3 center"> Hello : %s, why you don't look at our <a href='/article?name=article'>article</a>? </div> </div> ''' % session[
+            'n1code']
+        session['n1code'] = None
+        return render_template_string(template)
 
 
 @app.route("/", methods=["GET"])
