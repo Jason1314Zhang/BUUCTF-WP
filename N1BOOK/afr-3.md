@@ -43,7 +43,10 @@ def n1page():
         session['n1code'] = None
         return render_template_string(template)
 ```
-然后**template = '''<h1>N1 Page</h1> <div class="row> <div class="col-md-6 col-md-offset-3 center"> Hello : %s, why you don't look at our <a href='/article?name=article'>article</a>? </div> </div> ''' % session['n1code']**语句会将`session['n1code']`的值打印出来。
+然后下列语句会将`session['n1code']`的值打印出来。
+```python
+template = '''<h1>N1 Page</h1> <div class="row> <div class="col-md-6 col-md-offset-3 center"> Hello : %s, why you don't look at our <a href='/article?name=article'>article</a>? </div> </div> ''' % session['n1code']
+```
 重点在于我们需要构造`session['n1code']`，能让`flag.py`的值被打印出来
 
 8. 到这里时借用**Wilson Sumanang, Alexandre ZANNI**大佬的[flask session hack](./scripts/flask_session_cookie_hack.py)脚本。
