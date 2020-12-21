@@ -30,12 +30,12 @@ hint:
 
    此处提供一个例子，可以作为一种积累：
 
-   1. ```
+   ```
       1. content: ffifdyop
       2. hex: 276f722736c95d99e921722cf9ed621c
       3. raw: 'or'6\xc9]\x99\xe9!r,\xf9\xedb\x1c
       4. string: 'or'6]!r,b
-      ```
+   ```
 
 5. 在输入框中输入ffifdyop之后，查看源码，即可发现：
 
