@@ -79,4 +79,6 @@ hint:
 
 - 本题对MD5的使用比较巧妙。
 - 首先是最常规的sql注入，但最后的条件经过一次MD5加密，因此需要找到一个字符串经过MD5加密后，hex解码后为'or'1形式，可积累，该字符串即为`ffifdyop`
-- 然后是有关MD5的两种比较形式绕过。有关CTF中常用的MD5绕过，可参考：https://blog.csdn.net/qq_19980431/article/details/83018232，总结的比较详细。
+- 然后是有关MD5的两种比较形式绕过。有关CTF中常用的MD5绕过，可参考：[CTF中常见的MD5漏洞](https://blog.csdn.net/qq_19980431/article/details/83018232)，总结的比较详细。
+- 与本题类似的，还有[安洵杯 2019]easy_web和[BJDCTF 2020]ZJCTF，不过如此。这两道题都用MD5漏洞，可以比较练习。
+
