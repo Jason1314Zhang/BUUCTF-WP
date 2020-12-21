@@ -40,13 +40,22 @@ echo phpinfo();
 ![](./images/file-upload-2.png)
 
 
-## 思路
+## 总结
 文件上传主要是上传恶意php，该文件要能被访问并且被服务器解析，本题考点在于
 - 压缩包文件目录穿越，压缩包内文件命名为  
   `/../../xxx.php.xxx`
 - Apache php解析漏洞  
   `xxx.php.xxx`被当成`xxx.php`解析
-- php源码分析
+- php源码分析  
+### 进一步的扩宽一下难度
+- 服务器端可能会校验文件格式，例如严格限制jpg的格式，可能需要用到[jpg_payload工具](https://github.com/BlackFan/jpg_payload)在jpg中插入恶意php载荷
+- IIS6 `*.asp`文件夹下所有文件被当做脚本进行解析，例如`x.asp,a.jpg`
+- php可执行后缀  
+  `php3、php5、phtml、pht`
+- asp可执行后缀  
+  `cdx、cer、asa`
+- jsp可执行后缀  
+  `jspx`
 
 
 ## 源代码
