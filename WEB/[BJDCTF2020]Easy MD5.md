@@ -1,7 +1,6 @@
 ---
 Author: Coder-LYQ
 Date: 2020-12-19
-
 ---
 
 ## flag
@@ -30,12 +29,12 @@ hint:
 
    此处提供一个例子，可以作为一种积累：
 
-   1. ```
+   ```
       1. content: ffifdyop
       2. hex: 276f722736c95d99e921722cf9ed621c
       3. raw: 'or'6\xc9]\x99\xe9!r,\xf9\xedb\x1c
       4. string: 'or'6]!r,b
-      ```
+   ```
 
 5. 在输入框中输入ffifdyop之后，查看源码，即可发现：
 
@@ -79,4 +78,6 @@ hint:
 
 - 本题对MD5的使用比较巧妙。
 - 首先是最常规的sql注入，但最后的条件经过一次MD5加密，因此需要找到一个字符串经过MD5加密后，hex解码后为'or'1形式，可积累，该字符串即为`ffifdyop`
-- 然后是有关MD5的两种比较形式绕过。有关CTF中常用的MD5绕过，可参考：https://blog.csdn.net/qq_19980431/article/details/83018232，总结的比较详细。
+- 然后是有关MD5的两种比较形式绕过。有关CTF中常用的MD5绕过，可参考：[CTF中常见的MD5漏洞](https://blog.csdn.net/qq_19980431/article/details/83018232)，总结的比较详细。
+- 与本题类似的，还有[安洵杯 2019]easy_web和[BJDCTF 2020]ZJCTF，不过如此。这两道题都用MD5漏洞，可以比较练习。
+
