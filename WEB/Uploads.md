@@ -17,7 +17,7 @@ Date: 2020
 | [[SUCTF 2019]CheckIn]([SUCTF%202019]CheckIn.md) | 文件后缀黑名单、.user.ini使用 |
 | [[MRCTF2020]你传你马呢]([MRCTF2020]你传你马呢.md) | 文件后缀黑名单、.htaccess使用 |
 | [ACTF2020 新生赛]Upload | 前端检测、使用phtml文件绕过 |
-| [[RoarCTF2019]Simple Upload](./[RoarCTF%202019]Simple Upload.md) | thinkphp的upload函数漏洞利用 |
+| [[RoarCTF2019]Simple Upload]([RoarCTF%202019]Simple Upload.md) | thinkphp的upload函数漏洞利用 |
 
 
 
