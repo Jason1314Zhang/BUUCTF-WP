@@ -19,9 +19,14 @@ BUUCTF ZERO TO ONE
    - [文件上传](N1BOOK/[第二章%20web进阶]文件上传.md)
    - [SSRF training](N1BOOK/[第二章%20web进阶]SSRF%20Training.md)
 ### 2. WEB
+
+文件上传类Index：[Uploads](WEB/Uploads.md)
+
 - [BJDCTF2020 Easy MD5](WEB/[BJDCTF2020]Easy%20MD5.md)
 - [极客大挑战 2019 Secret File](WEB/[极客大挑战%202019]Secret%20File.md)
 - [SUCTF 2019 CheckIn](WEB/[SUCTF%202019]CheckIn.md)
 - [强网杯 2019 随便注](WEB/[强网杯%202019]随便注.md)
+- [MRCTF2020 你传你马呢](WEB/[MRCTF2020]你传你马呢.md)
+- [RoarCTF 2019Simple Upload](WEB/[RoarCTF%202019]Simple%20Upload.md)
 ### 3. REAL
 
