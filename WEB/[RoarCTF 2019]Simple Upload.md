@@ -95,7 +95,7 @@ print(r.text)
 
 <img src="./images/image-20201227212507106.png" alt="image-20201227212507106" style="zoom:50%;" />
 
-​	进行遍历的脚本为：
+	进行遍历的脚本为：
 
 ```python
 dir ='abcdef0123456789'

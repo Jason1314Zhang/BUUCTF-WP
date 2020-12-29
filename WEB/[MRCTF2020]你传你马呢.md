@@ -13,7 +13,7 @@ Date: 2020-12-26
 
 2. 上传jpg文件，可以成功上传，并且页面会显示上传后的路径。
 
-   <img src="./images/image-20201227101230392.png" alt="image-20201227101230392" style="zoom:50%;" />![image-20201227101257333](./images/image-20201227101257333.png)
+   <img src="./images/image-20201227101230392.png" alt="image-20201227101230392" style="zoom:50%;" />
 
    <img src="./images/image-20201227101319301.png" alt="image-20201227101319301" style="zoom:50%;" />
 
@@ -30,8 +30,6 @@ Date: 2020-12-26
    ```
 
 4. 然后再利用蚁剑连接上传的jpg文件即可。
-
-
 
 ## 总结
 
