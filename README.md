@@ -19,6 +19,9 @@ BUUCTF ZERO TO ONE
    - [文件上传](N1BOOK/[第二章%20web进阶]文件上传.md)
    - [SSRF training](N1BOOK/[第二章%20web进阶]SSRF%20Training.md)
    - [死亡ping命令](N1BOOK/[第二章%20web进阶]死亡ping命令.md)
+   - [逻辑漏洞](N1BOOK/[第三章%20web进阶]逻辑漏洞.md)
+   - [Python里的SSRF](N1BOOK/[第三章%20web进阶]Python里的SSRF.md)
+   - [SSTI](N1BOOK/[第三章%20web进阶]SSTI.md)
 ### 2. WEB
 
 文件上传类Index：[Uploads](WEB/Uploads.md)
