@@ -4,7 +4,7 @@ Date: 2020-12-30
 ---
 
 ## flag
-``
+`flag{5f61a351-bedc-4807-a8c6-9aa90ccacd54}`
 
 ## 思路
 1. 访问环境，`union select or from and flag`等关键字被过滤，双写、大写绕过无效。  
