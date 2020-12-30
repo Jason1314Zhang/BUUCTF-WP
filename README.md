@@ -35,5 +35,8 @@ BUUCTF ZERO TO ONE
 - [强网杯 2019 随便注](WEB/[强网杯%202019]随便注.md)
 - [MRCTF2020 你传你马呢](WEB/[MRCTF2020]你传你马呢.md)
 - [RoarCTF 2019Simple Upload](WEB/[RoarCTF%202019]Simple%20Upload.md)
+- [HCTF 2018 WarmUp](WEB/[HCTF%202018]WarmUp.md)
+- [SUCTF 2019 EasySQL](WEB/[SUCTF%202019]EasySQL.md)
+- [HFCTF2020 BabyUpload](WEB/[HFCTF2020]BabyUpload.md)
 ### 3. REAL
 
