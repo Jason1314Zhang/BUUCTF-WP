@@ -9,15 +9,15 @@ Date: 2020-12-20
 ## 思路
 1. 访问环境得到如下界面，有两处挑战`simple`和`interesting`  
    这里吐槽一下，出题人`interesting`写错了，英语有待加强
-   ![](images/ssrf-1.png)
+   <center><img src="./images/ssrf-1.png" width = 60%/></center>
 2. `simple`，直接根据提示输入`127.0.0.1/flag.php`获得flag
 3. `interesting`，开始审计源码，不允许执行发往内网服务器的请求。源码中使用`parse_url`解析url参数检查ip是否是局域网ip，却用`curl_exec`获取实际参数，这两个函数对于url的解析不同，从而可以绕过。
 `http://a:@127.0.0.1:80@www.baidu.com/flag.php`或`http://@127.0.0.1:80@www.baidu.com/flag.php`
     - `parse_url`解析到的host是www.baidu.com
     - `curl_exec`解析到的127.0.0.1
 4. 结果如下  
-![](images/ssrf-2.png)
-![](images/ssrf-3.png)
+ <center><img src="./images/ssrf-2.png" width = 60%/></center>
+ <center><img src="./images/ssrf-3.png" width = 60%/></center>
 
 ## 总结
 ssrf通常是让内网主机去访问内网特定服务器，外网主机可能没办法直接访问内网服务器。
