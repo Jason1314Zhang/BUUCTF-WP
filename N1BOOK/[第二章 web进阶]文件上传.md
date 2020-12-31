@@ -35,9 +35,9 @@ echo phpinfo();
 ?>
 ```
 6. 通过010editor构造恶意压缩包，这里需要注意修改后的文件名长度与修改前一致，否则解压会报错，这里改为`/../../jason07.php.xxx`  
-![](./images/file-upload-1.png)
+<center><img src="./images/file-upload-1.png" width = 60%/></center>
 7. 上传[压缩包](./scripts/123456789123456789.zip)，访问`jason07.php.xxx`，得到flag，不过这道题没有把phpinfo()解析出来。  
-![](./images/file-upload-2.png)
+<center><img src="./images/file-upload-2.png" width = 60%/></center>
 
 
 ## 总结
