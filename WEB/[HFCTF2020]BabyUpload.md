@@ -150,7 +150,7 @@ elseif ($direction === "download") {
 
 $_SESSION['username'] 设为'guest'。在服务端，session文件的文件名应为sess_PHPSESSID，
 
-<img src="images/image-20201229200531170.png" alt="image-20201229200531170" style="zoom: 50%;" />
+<img src="images/image-20201229200531170.png" alt="image-20201229200531170"  width="60%" />
 
 因此应POST的参数为：`direction=download&filename=sess_d28509040bb8702179606ddf2dd7a1ea`
 
