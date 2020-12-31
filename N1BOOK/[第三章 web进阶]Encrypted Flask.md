@@ -17,6 +17,9 @@ Date: 2020-12-30
 ## 思路
 1. 访问环境，由于题目给出flask提示，猜测通过flask session伪造实现，第一感的思路是，找到SSTI注入点获得config信息，进而获得加密秘钥key，伪造session，越权获得flag。
 2. 通过测试没有发现SSTI注入点，题目hint给了密码学和逆向知识，猜测这题不能像之前那样通过任意文件读或SSTI获得密钥了，大概率是flask使用了弱加密算法。注册一个账号后，会让用户给10个选项投票，选项中也给出了提示AES。
-<img src="./images/flask-1.png" width = 60%/>
-   
-   
+   ![](images/flask-1.png)
+3. 知道AES可能有漏洞，但还是无法做出来。建议看[Encrypted Flask官方题解](./[第三章%20web进阶]Encrypted%20Flask官方题解.md)  
+同理，[第三章 web进阶unsecure converter](./scripts/Nu1L%20unsecure%20converter%20wp.zip)也看官方题解   
+
+## 总结
+到此为止，关于Nu1L战队的WEB题就已经做完了，接下来开始常规WEB训练。
