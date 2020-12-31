@@ -215,3 +215,13 @@ $_SESSION['username'] = 'admin';
 3. 浏览器中Cookie的PHPSESSID值为sess文件SHA256值。
 4. 注意不要看到success.txt就意味是文件，也可以是一个目录名。
 5. flask的session计算方法可以参考题目[第一章 web入门 afr-3](../N1BOOK/[第一章%20web入门]afr-3.md)
+
+
+
+## 参考链接
+
+- [PHP的Session机制](https://blog.csdn.net/qq_34804120/article/details/80251973)
+
+- [参考wp1](https://blog.csdn.net/qq_43756333/article/details/107121126)
+
+- [参考wp2](https://www.jianshu.com/p/b930eadc0906)
