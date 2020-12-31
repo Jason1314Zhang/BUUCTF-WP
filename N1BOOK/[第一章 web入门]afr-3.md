@@ -1,10 +1,12 @@
 ---
 Author: SuperJason
 Date: 2020-12-18
+Update: 2020-12-31
 ---
 
 ## flag
 `n1book{afr_3_solved}`
+[参考资料](https://www.anquanke.com/post/id/170466)
 
 ## 思路
 1. 访问环境，任意输入ls  
