@@ -41,6 +41,7 @@ BUUCTF ZERO TO ONE
 - [HFCTF2020 BabyUpload](WEB/[HFCTF2020]BabyUpload.md)
 - [GYCTF2020Ezsqli.md](WEB/[GYCTF2020]Ezsqli.md)
 - [极客大挑战 2019FinalSQL.md](WEB/[极客大挑战%202019]FinalSQL.md)
+- [极客大挑战 BabySQL.md](WEB/[极客大挑战%202019]BabySQL.md)
 
 ### 3. REAL
 

