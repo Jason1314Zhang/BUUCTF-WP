@@ -150,7 +150,7 @@ elseif ($direction === "download") {
 
 $_SESSION['username'] 设为'guest'。在服务端，session文件的文件名应为sess_PHPSESSID，
 
-<img src="images/image-20201229200531170.png" alt="image-20201229200531170" style="zoom: 50%;" />
+<img src="images/image-20201229200531170.png" alt="image-20201229200531170"  width="60%" />
 
 因此应POST的参数为：`direction=download&filename=sess_d28509040bb8702179606ddf2dd7a1ea`
 
@@ -236,3 +236,11 @@ $_SESSION['username'] = 'admin';
 5. 浏览器中Cookie的PHPSESSID值为`sess_{PHPSESSID}`文件hash值(具体hash算法根据后端来定义)。
 6. 注意不要看到success.txt就意味是文件，也可以是一个目录名。
 7. flask的session计算方法可以参考题目[第一章 web入门 afr-3](../N1BOOK/[第一章%20web入门]afr-3.md)
+
+## 参考链接
+
+- [PHP的Session机制](https://blog.csdn.net/qq_34804120/article/details/80251973)
+
+- [参考wp1](https://blog.csdn.net/qq_43756333/article/details/107121126)
+
+- [参考wp2](https://www.jianshu.com/p/b930eadc0906)
