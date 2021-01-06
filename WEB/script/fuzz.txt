@@ -1,4 +1,6 @@
 order
+by
+order by 
 delete
 insert
 like
@@ -11,7 +13,6 @@ exsits
 substr
 file
 left
-substr
 loadfile
 sleep
 hex
@@ -22,8 +23,10 @@ outfile
 lines
 dumpfile
 `
+'
 < 
-\#
+#
+=
 %23
 %20
 \
@@ -33,3 +36,9 @@ extractvalue
 updatexml
 union
 select
+^
+xor
+limit
+if
+information_schema
+regexp
