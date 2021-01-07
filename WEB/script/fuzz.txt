@@ -42,3 +42,6 @@ limit
 if
 information_schema
 regexp
+where
+concat
+from
