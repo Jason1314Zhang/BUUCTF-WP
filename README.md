@@ -39,9 +39,10 @@ BUUCTF ZERO TO ONE
 - [HCTF 2018 WarmUp](WEB/[HCTF%202018]WarmUp.md)
 - [SUCTF 2019 EasySQL](WEB/[SUCTF%202019]EasySQL.md)
 - [HFCTF2020 BabyUpload](WEB/[HFCTF2020]BabyUpload.md)
-- [GYCTF2020Ezsqli.md](WEB/[GYCTF2020]Ezsqli.md)
-- [极客大挑战 2019FinalSQL.md](WEB/[极客大挑战%202019]FinalSQL.md)
-- [极客大挑战 BabySQL.md](WEB/[极客大挑战%202019]BabySQL.md)
-- [极客大挑战 HardSQL.md](WEB/[极客大挑战%202019]HardSQL.md)
+- [GYCTF2020Ezsqli](WEB/[GYCTF2020]Ezsqli.md)
+- [极客大挑战 2019FinalSQL](WEB/[极客大挑战%202019]FinalSQL.md)
+- [极客大挑战 BabySQL](WEB/[极客大挑战%202019]BabySQL.md)
+- [极客大挑战 HardSQL](WEB/[极客大挑战%202019]HardSQL.md)
+- [GWCTF 2019 枯燥的抽奖](WEB/[GWCTF%202019]枯燥的抽奖.md)
 ### 3. REAL
 
