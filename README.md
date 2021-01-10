@@ -44,5 +44,6 @@ BUUCTF ZERO TO ONE
 - [极客大挑战 BabySQL](WEB/[极客大挑战%202019]BabySQL.md)
 - [极客大挑战 HardSQL](WEB/[极客大挑战%202019]HardSQL.md)
 - [GWCTF 2019 枯燥的抽奖](WEB/[GWCTF%202019]枯燥的抽奖.md)
+- [安洵杯 2019 不是文件上传](WEB/[安洵杯%202019]不是文件上传.md)
 ### 3. REAL
 
