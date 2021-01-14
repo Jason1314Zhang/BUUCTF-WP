@@ -45,6 +45,8 @@ BUUCTF ZERO TO ONE
 - [极客大挑战 HardSQL](WEB/[极客大挑战%202019]HardSQL.md)
 - [GWCTF 2019 枯燥的抽奖](WEB/[GWCTF%202019]枯燥的抽奖.md)
 - [安洵杯 2019 不是文件上传](WEB/[安洵杯%202019]不是文件上传.md)
+- [SUCTF 2018 MultiSQL](WEB/[SUCTF%202018]MultiSQL.md)
+- [October 2019 Twice SQL Injection](WEB/October%202019%20Twice%20SQL%20Injection.md)
 - [NPUCTF 2020 验证码](WEB/[NPUCTF2020]验证码.md)
 ### 3. REAL
 
