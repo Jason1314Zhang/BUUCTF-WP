@@ -48,5 +48,6 @@ BUUCTF ZERO TO ONE
 - [SUCTF 2018 MultiSQL](WEB/[SUCTF%202018]MultiSQL.md)
 - [October 2019 Twice SQL Injection](WEB/October%202019%20Twice%20SQL%20Injection.md)
 - [NPUCTF 2020 验证码](WEB/[NPUCTF2020]验证码.md)
+- [HCTF 2018 admin](WEB/[[HCTF%202018]admin.md])
 ### 3. REAL
 
