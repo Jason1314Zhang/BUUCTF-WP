@@ -51,5 +51,7 @@ BUUCTF ZERO TO ONE
 - [HCTF 2018 admin](WEB/[[HCTF%202018]admin.md])
 - [De1CTF 2019SSRF Me](WEB/[De1CTF%202019]SSRF%20Me.md)
 - [ZJCTF 2019 NiZhuanSiWei](WEB/[ZJCTF%202019]NiZhuanSiWei.md)
+- [网鼎杯 玄武组 SSRFMe](WEB/[网鼎杯%202020%20玄武组]SSRFMe.md)
+- [GKCTF2020EZ三剑客-EzWeb](WEB/[GKCTF2020]EZ三剑客-EzWeb.md)
 ### 3. REAL
 

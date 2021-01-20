@@ -63,7 +63,7 @@ Date: 2021-1-20
 
 5. 扫描出来发现端口6379和80开放。
 
-   6379是redis端口，根据[GKCTF2020 EZ三剑客-EzWeb]([GKCTF2020]EZ三剑客-EzWeb.md)提过的四种利用方式：
+   6379是redis端口，根据[网鼎杯 玄武组 SSRFMe](./[网鼎杯%202020%20玄武组]SSRFMe.md)提过的四种利用方式：
 
    1. 可写webshell
    2. 写ssh公钥
