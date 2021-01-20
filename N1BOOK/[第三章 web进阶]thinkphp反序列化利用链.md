@@ -80,3 +80,6 @@ thinkphp 5.1的反序列化漏洞，由于thinkphp 5.1还存在RCE漏洞(漏洞�
 - 找到利用点，application\index\controller\index.php文件的hello函数
 - 构造正确的路由，不清楚tp路由的话，很难构造正确的路由，正确构造`a`的值，post上传`str`的payload
 - thinkphp5.1 php反序列化利用链
+
+## 参考资料
+- [php反序列化与session反序列化](http://p0desta.com/2018/04/01/php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%80%BB%E7%BB%93/)

