@@ -13,8 +13,11 @@ Date: 2021-1-26
    echo "flag在哪里呢？<br>";
    if(isset($_GET['exp'])){
        if (!preg_match('/data:\/\/|filter:\/\/|php:\/\/|phar:\/\//i', $_GET['exp'])) {
+       //不能使用几种伪协议
            if(';' === preg_replace('/[a-z,_]+\((?R)?\)/', NULL, $_GET['exp'])) {
+           //只能使用无参数函数
                if (!preg_match('/et|na|info|dec|bin|hex|oct|pi|log/i', $_GET['exp'])) {
+               //调用的函数不能包含上面的字符
                    // echo $_GET['exp'];
                    @eval($_GET['exp']);
                }
@@ -62,7 +65,11 @@ Date: 2021-1-26
    >
    > var_dump  显示结构信息、包括类型和值，并以缩进表示层次。
 
-   表示点的函数：current(localeconv())/pos(localeconv())
+   表示**点**的函数：current(localeconv())/pos(localeconv())
+
+   localeconv()函数返回的数组的第一个即为小数点
+
+   <img src="images/image-20210126223648258.png" alt="image-20210126223648258" width="50%;" />
 
    所以这里可用：
 
