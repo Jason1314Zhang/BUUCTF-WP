@@ -69,14 +69,14 @@ Date: 2021-1-26
 
    localeconv()函数返回的数组的第一个即为小数点
 
-   <img src="images/image-20210126223648258.png" alt="image-20210126223648258" width="50%;" />
+   <img src="../images/image-20210126223648258.png" alt="image-20210126223648258" width="50%;" />
 
    所以这里可用：
 
    - print_r(scandir(current(localeconv())))
    - var_dump(scandir(current(localeconv())))
 
-   <img src="images/image-20210126175038061.png" alt="image-20210126175038061" width="67%;" />
+   <img src="../images/image-20210126175038061.png" alt="image-20210126175038061" width="67%;" />
 
 4. 可以看到当前目录下有flag.php文件，是第3个文件。说明最终的flag可能在这个文件里面。
 

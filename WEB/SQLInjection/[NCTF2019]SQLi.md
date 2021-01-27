@@ -7,7 +7,7 @@ Date: 2021-1-6
 1. 打开网页上显示的即为登录框和一个小提示，登录时的sql查询语句为常见的查询语句。说明这里后端使用的waf肯定比较厉害。
    
 
-<img src="images/image-20210106194418220.png" alt="image-20210106194418220" width="25%;" />
+<img src="../images/image-20210106194418220.png" alt="image-20210106194418220" width="25%;" />
 
 2. 常规测试，先正常登录看看，`admin`和`123`，网页会弹框提示hacker！！  但是`test`和`123`，网页就还是上面的登录框，只是提示的sql语句变为：`select * from users where username='test' and passwd='123'`
 
@@ -17,11 +17,11 @@ Date: 2021-1-6
 
    hint.txt内容为：
 
-   <img src="images/image-20210106203258596.png" alt="image-20210106203258596" style="zoom:50%;" />
+   <img src="../images/image-20210106203258596.png" alt="image-20210106203258596" style="zoom:50%;" />
 
 4. 也可以使用burpsuite的intruder进行测试，探测waf到底会检测哪些关键字。如下，可以看出过滤了很多关键字。
 
-   <img src="images/image-20210106195859988.png" alt="image-20210106195859988" width="30%;" />
+   <img src="../images/image-20210106195859988.png" alt="image-20210106195859988" width="30%;" />
 
 5. 可以看出过滤了union select，虽然没有过滤转义符\，但过滤了'和#，因此无法直接像之前做过的[BJDCTF 2nd简单注入.md]([BJDCTF%202nd]简单注入.md)，需要一点改变。
 
@@ -35,7 +35,7 @@ Date: 2021-1-6
 
    可以看到，这里的返回结果中location为welcome.php，与之前不同。说明注入成功。
 
-   <img src="images/image-20210106201841490.png" alt="image-20210106201841490" width="70%;" />
+   <img src="../images/image-20210106201841490.png" alt="image-20210106201841490" width="70%;" />
 
    和之前思路一样，还是利用**1**部分的进行注入。substr、if这些关键字被过滤了，所以之前的方法也行不通。
 
@@ -43,7 +43,7 @@ Date: 2021-1-6
 
    原理如图：
 
-   <img src="images/image-20210106202418082.png" alt="image-20210106202418082" width="50%;" />
+   <img src="../images/image-20210106202418082.png" alt="image-20210106202418082" width="50%;" />
 
    7. 因此本题的脚本为：
 

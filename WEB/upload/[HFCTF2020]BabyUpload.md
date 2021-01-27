@@ -150,11 +150,11 @@ elseif ($direction === "download") {
 
 $_SESSION['username'] 设为'guest'。在服务端，session文件的文件名应为sess_PHPSESSID，
 
-<img src="images/image-20201229200531170.png" alt="image-20201229200531170"  width="60%" />
+<img src="../images/image-20201229200531170.png" alt="image-20201229200531170"  width="60%" />
 
 因此应POST的参数为：`direction=download&filename=sess_d28509040bb8702179606ddf2dd7a1ea`
 
-<img src="images/image-20201229200146788.png" alt="image-20201229200146788" style="zoom:33%;" />
+<img src="../images/image-20201229200146788.png" alt="image-20201229200146788" style="zoom:33%;" />
 
 可以看到页面上返回了usernames:5:"guest";可以判断采用了`php_binary`的序列化方式
 
@@ -180,27 +180,27 @@ $_SESSION['username'] = 'admin';
 
 ​	该文件运行后，会在目录下生成一个sess_文件，可以查看sess中内容，如下：
 
-<img src="images/image-20201229201346936.png" alt="image-20201229201346936" style="zoom:50%;" />
+<img src="../images/image-20201229201346936.png" alt="image-20201229201346936" style="zoom:50%;" />
 
-<img src="images/image-20201229201218553.png" alt="image-20201229201218553" style="zoom:50%;" />
+<img src="../images/image-20201229201218553.png" alt="image-20201229201218553" style="zoom:50%;" />
 
 6. 此时就只需要将生成的sess文件上传到服务端，替换原有的sess文件，然后前端解析时$_SESSION['username'] 即为admin，满足了获取flag的第一个条件。
 
 7. 为了方便，在上传文件时先将session文件改名为sess。利用**postman**进行post请求上传文件。
 
-   <img src="images/image-20201229202256048.png" alt="image-20201229202256048" style="zoom:67%;" />
+   <img src="../images/image-20201229202256048.png" alt="image-20201229202256048" style="zoom:67%;" />
 
 8. 文件上传后会被重命名（上面的第二段代码），在原有的文件名基础上加上文件的sha256值，因此还需要获取文件的sha256值。
 
    利用cmd自带的certutil即可计算  `certutil -hashfile 文件名 SHA256 `
 
-<img src="images/image-20201229203152455.png" alt="image-20201229203152455" style="zoom:50%;" />
+<img src="../images/image-20201229203152455.png" alt="image-20201229203152455" style="zoom:50%;" />
 
 9. 可以验证一下是否上传成功。
 
    可以看到返回结果显示username已经变成admin了。
 
-   <img src="images/image-20201229203751555.png" alt="image-20201229203751555" style="zoom: 50%;" />
+   <img src="../images/image-20201229203751555.png" alt="image-20201229203751555" style="zoom: 50%;" />
 
 10. 此时再想办法满足条件file_exists('/var/babyctf/success.txt')
 
@@ -210,13 +210,13 @@ $_SESSION['username'] = 'admin';
 
     另外题目还给了一个attr参数，因此可以使attr=success.txt，创建目录，因此就存在一个/var/babyctf/success.txt目录，就可以满足上面的条件。
 
-    <img src="images/image-20201229210200858.png" alt="image-20201229210200858" style="zoom: 33%;" />
+    <img src="../images/image-20201229210200858.png" alt="image-20201229210200858" style="zoom: 33%;" />
 
 11. 此时再将浏览器中Cookie的PHPSESSID修改为sess文件的SHA256值即可。
 
 ​	   再刷新页面即可获取到flag。
 
-​	<img src="images/image-20201229210433309.png" alt="image-20201229210433309" style="zoom:50%;" />
+​	<img src="../images/image-20201229210433309.png" alt="image-20201229210433309" style="zoom:50%;" />
 
 ## 总结
 

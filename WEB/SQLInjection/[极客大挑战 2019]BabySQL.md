@@ -13,5 +13,5 @@ Date: 2020-12-30
    - b4bsql,geekuser 
    - `username=-1' ununionion seselectlect 1,group_concat(passwoorrd),3 frofromm b4bsql -- -&password=1`
    - b4bsql表字段：id,username,password
-   ![](./images/babysql-1.png)
+   ![](../images/babysql-1.png)
 

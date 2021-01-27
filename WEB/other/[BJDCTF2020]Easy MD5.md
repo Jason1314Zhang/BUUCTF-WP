@@ -17,7 +17,7 @@ hint:
 
 3. 利用burpsuite拦截，发现hint：select * from 'admin' where password=md5($pass,true)
 
-   <img src="images/image-20201219185410810.png" alt="image-20201219185410810" style="zoom:50%;" />
+   <img src="../images/image-20201219185410810.png" alt="image-20201219185410810" style="zoom:50%;" />
 
    ​       此处就可以考虑SQL注入，最简单的思想是 `'(trash)' or '1(trash)'` 绕过
 
@@ -42,7 +42,7 @@ hint:
 
 6. 访问levels91.php，发现提示如下：
 
-   ![image-20201219191226658](images/image-20201219191226658.png)
+   ![image-20201219191226658](../images/image-20201219191226658.png)
 
 7. 此处思路为 如何绕过`$a!=$b&&md5($a)==md5($b)`
 
@@ -64,7 +64,7 @@ hint:
 
    该页面显示为：
 
-   <img src="images/image-20201219192551645.png" alt="image-20201219192551645" style="zoom: 67%;" />
+   <img src="../images/image-20201219192551645.png" alt="image-20201219192551645" style="zoom: 67%;" />
 
 10. 此处的绕过条件变为：`$_POST['param1']!==$_POST['param2']&&md5($_POST['param1'])===md5($_POST['param2'])`
 
@@ -72,7 +72,7 @@ hint:
 
     传递post数据一般用一些插件即可。此处是hackbar。
 
-    ![image-20201219193124797](images/image-20201219193124797.png)
+    ![image-20201219193124797](../images/image-20201219193124797.png)
 
 ## 总结
 

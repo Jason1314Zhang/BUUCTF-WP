@@ -7,15 +7,15 @@ Date: 2021-1-3
 
 1. 打开网页显示如下，有登录和注册框。注册账号登录后，有用户信息和编辑头像两个选项。
 
-<img src="images/image-20210113193148596.png" alt="image-20210113193148596" width="50%;" />
+<img src="../images/image-20210113193148596.png" alt="image-20210113193148596" width="50%;" />
 
 
 
-<img src="images/image-20210113193336886.png" alt="image-20210113193336886" width="50%;" />
+<img src="../images/image-20210113193336886.png" alt="image-20210113193336886" width="50%;" />
 
 2. 点击用户信息，url中有id=2，这种情况很有可能存在sql注入，而且很可能是整型注入。
 
-   <img src="images/image-20210113193445199.png" alt="image-20210113193445199" width="50%;" />
+   <img src="../images/image-20210113193445199.png" alt="image-20210113193445199" width="50%;" />
 
    修改id=2^1^1，可以正常显示；id=2^1，页面上无数据。说明存在整型注入。
 
@@ -25,7 +25,7 @@ Date: 2021-1-3
 
 3. 点击编辑头像，可以选择文件上传。说明可能存在文件上传漏洞。
 
-   <img src="images/image-20210113194130354.png" alt="image-20210113194130354" width="50%;" />
+   <img src="../images/image-20210113194130354.png" alt="image-20210113194130354" width="50%;" />
 
    这里只能上传.jpg|.jpeg|.png|.gif类型的文件，而且是前端检测。
 
@@ -39,11 +39,11 @@ Date: 2021-1-3
    
    但页面上无任何内容显示，如下：
    
-   <img src="images/image-20210113200537419.png" alt="image-20210113200537419" width="50%;" />
+   <img src="../images/image-20210113200537419.png" alt="image-20210113200537419" width="50%;" />
    
    测试`id=2^1^(if(ascii(mid(user(),1,1))>0,1,0))`,页面正常显示。
    
-   <img src="images/image-20210113200651400.png" alt="image-20210113200651400" width="50%;" />
+   <img src="../images/image-20210113200651400.png" alt="image-20210113200651400" width="50%;" />
    
    说明这里会过滤一些关键字。（如何fuzz发现其他被过滤的关键字）
    
@@ -67,11 +67,11 @@ Date: 2021-1-3
 
 6. 访问上传的shell.php，并post请求，利用system()命令获取信息。如下，flag应该存在WelL_Th1s_14_fl4g中。
 
-<img src="images/image-20210113201630356.png" alt="image-20210113201630356" width="60%;" />
+<img src="../images/image-20210113201630356.png" alt="image-20210113201630356" width="60%;" />
 
 7. 获取flag。
 
-   <img src="images/image-20210113201831749.png" alt="image-20210113201831749" width="60%;" />
+   <img src="../images/image-20210113201831749.png" alt="image-20210113201831749" width="60%;" />
 
 ## 总结
 

@@ -25,8 +25,12 @@ BUUCTF ZERO TO ONE
    - [thinkphp反序列化利用链](N1BOOK/[第三章%20web进阶]thinkphp反序列化利用链.md)
 ### 2. WEB
 
-文件上传类Index：[Uploads](WEB/Uploads.md)
+- 文件上传类Index： [Uploads](WEB/Uploads.md)
+- SSRF类Index： [SSRF](WEB/SSRF.md)
+- SQL注入类Index： [SQLInjection](WEB/SQL_Inject.md)
+- RCE类Index:  [RCE](WEB/RCE.md)
 
+<!--
 - [BJDCTF2020 Easy MD5](WEB/[BJDCTF2020]Easy%20MD5.md)
 - [极客大挑战 2019 Knife](WEB/[极客大挑战%202019]Knife.md)
 - [极客大挑战 2019 Secret File](WEB/[极客大挑战%202019]Secret%20File.md)
@@ -55,5 +59,6 @@ BUUCTF ZERO TO ONE
 - [GKCTF2020EZ三剑客-EzWeb](WEB/[GKCTF2020]EZ三剑客-EzWeb.md)
 - [N1CTF 2018 easy_harder_php](WEB/[N1CTF%202018]easy_harder_php.md)
 - [极客大挑战 2019 PHP](WEB/[[极客大挑战%202019]PHP.md])
+-->
 ### 3. REAL
 

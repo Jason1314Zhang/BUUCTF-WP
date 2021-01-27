@@ -6,17 +6,17 @@ Date: 2021-1-5
 ## 思路
 1. 打开网页，直接显示的就是登录框，首先尝试万能密码，`admin' and 1=1#`，密码随便输，发现网页提示hack，说明网页应该有检测输入中是否含有特定关键字，因此可以考虑使用burpsuite的intruder进行测试。
 
-   <img src="images/image-20210105195303604.png" alt="image-20210105195303604" width="40%;" />
+   <img src="../images/image-20210105195303604.png" alt="image-20210105195303604" width="40%;" />
 
-   <img src="images/image-20210105195351652.png" alt="image-20210105195351652" width="50%;" />
+   <img src="../images/image-20210105195351652.png" alt="image-20210105195351652" width="50%;" />
 
 2. 从robots.txt发现hint.txt，发现线索：
 
-   <img src="images/image-20210106211834712.png" alt="image-20210106211834712" width="50%;" />
+   <img src="../images/image-20210106211834712.png" alt="image-20210106211834712" width="50%;" />
 
 3. 利用前面提过的fuzz.txt，进行fuzz。发现union select and = 这些被检测，所以不能使用联合注入。但是用于布尔注入和报错注入的一些关键字均未被检测。
 
-   <img src="images/image-20210105200652806.png" alt="image-20210105200652806" width="50%;" />
+   <img src="../images/image-20210105200652806.png" alt="image-20210105200652806" width="50%;" />
 
 4. 参考其他wp，利用**转义符`\`**，将username后面的'转义成普通字符，password字段后面的语句便能逃逸执行。
 

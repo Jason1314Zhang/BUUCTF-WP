@@ -47,11 +47,11 @@ def register():
                 )
 ```   
 2. 打开ctfd平台，用户界面只有一个admin账户，猜测是修改admin账户的密码，登录后拿到flag。  
-   ![](images/ctfd-1.png)
+   ![](../images/ctfd-1.png)
 3. 在[BUUOJ邮箱](http://mail.buuoj.cn/admin/ui/user/signup/mail.buuoj.cn)注册一个邮箱。通过这个邮箱去注册ctfd的加空格` admin `账户，此时user变为两个admin。  
-   ![](images/ctfd-2.png)
+   ![](../images/ctfd-2.png)
 4. 接下来需要找到重置密码的地方，根据auth.py文件，`/reset_password`接口可以重置密码。这里flask也是用的反序列化去获得用户名，反序列化NB。    
-   ![](images/ctfd-3.png)
+   ![](../images/ctfd-3.png)
 ```python
 @auth.route('/reset_password', methods=['POST', 'GET'])
 @auth.route('/reset_password/<data>', methods=['POST', 'GET'])
@@ -67,9 +67,9 @@ def reset_password(data=None):
 
 ```
 5. 这里注意邮箱账号必须是小写才能收到邮件，大写的账户收不到邮件，但是又可以注册，这里算是本人新发现的一个点，但好像并没有什么可以深入的漏洞点。  
-   ![](images/ctfd-4.png)
+   ![](../images/ctfd-4.png)
 6. 登录管理员界面，获得flag   
-   ![](images/ctfd-5.png)
+   ![](../images/ctfd-5.png)
 
 ## 总结
 从搭建CTF的到发现已有`CVE-2020-7245`，借助BUUCTF平台正好完成一道任意账户接管漏洞题目，整理一下攻击链。

@@ -13,7 +13,7 @@ Date: 2020-12-31
 
    点击数字的链接为：search.php?id=1
 
-<img src="images/image-20201231143221010.png" alt="image-20201231143221010" style="zoom: 25%;" />
+<img src="../images/image-20201231143221010.png" alt="image-20201231143221010" style="zoom: 25%;" />
 
 2. 先从最常规的万能密码对登录框进行尝试
 

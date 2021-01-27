@@ -7,7 +7,7 @@ Date: 2021-1-18
 
 1. 题目提示hint为`flag is in ./flag.txt`，另外打开网页显示一段flask代码，如下：
 
-<img src="images/image-20210118204158228.png" alt="image-20210118204158228" width="50%;" />
+<img src="../images/image-20210118204158228.png" alt="image-20210118204158228" width="50%;" />
 
 ​	整理代码进行分析，主要分为两大块。
 
@@ -15,7 +15,7 @@ Date: 2021-1-18
 
 - 三个路由，对应这三个路由，分别有不同的执行动作
 
-  <img src="images/image-20210118205659171.png" alt="image-20210118205659171" width="50%;" />
+  <img src="../images/image-20210118205659171.png" alt="image-20210118205659171" width="50%;" />
 
   - @app.route("/geneSign", methods=['GET', 'POST'])
 
@@ -33,7 +33,7 @@ Date: 2021-1-18
 
   - 分析完三个路由其实就可以比较清晰的看出，Task.exec()应该是一个比较重要的函数，设置特定参数值，即可获取flag内容。
 
-    <img src="images/image-20210118205754486.png" alt="image-20210118205754486" width="50%;" />
+    <img src="../images/image-20210118205754486.png" alt="image-20210118205754486" width="50%;" />
 
   2. 分析class Task
 
@@ -64,9 +64,9 @@ Date: 2021-1-18
 
   ​		题目是对`secert_key + param + action`三者拼接而成的字符串进行md5，而在获取flag时，必须设置action为readscan/scanread，则这里可以考虑在geneSign页面输入param时，直接输入flag.txtread，然后与geneSign中的action拼接后便为flag.txtreadscan，满足要求。
 
-  <img src="images/image-20210118212149606.png" alt="image-20210118212149606" width="67%;" />
+  <img src="../images/image-20210118212149606.png" alt="image-20210118212149606" width="67%;" />
 
-  <img src="images/image-20210118212312532.png" alt="image-20210118212312532" width="67%;" />
+  <img src="../images/image-20210118212312532.png" alt="image-20210118212312532" width="67%;" />
 
   4. 这里也可使用另外一种方法：**哈希长度扩展攻击**
 

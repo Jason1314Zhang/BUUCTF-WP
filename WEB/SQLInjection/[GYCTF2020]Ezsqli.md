@@ -7,33 +7,33 @@ Date: 2020-12-31
 
 1. 打开页面显示输入框，输入1，使用burpsuite拦截查看请求格式，如下：
 
-<img src="images/image-20201231175939118.png" alt="image-20201231175939118" style="zoom: 33%;" />
+<img src="../images/image-20201231175939118.png" alt="image-20201231175939118" style="zoom: 33%;" />
 
 也可尝试输入字符，发现bool(false)。
 
-<img src="images/image-20201231180227413.png" alt="image-20201231180227413" style="zoom:33%;" />
+<img src="../images/image-20201231180227413.png" alt="image-20201231180227413" style="zoom:33%;" />
 
 由此推断，此处应该是存在整型注入。
 
 2. 输入2-1，发现返回结果和直接输入1一样，由此可以确定是整型注入。
 
-   <img src="images/image-20201231180750140.png" alt="image-20201231180750140" style="zoom: 50%;" />
+   <img src="../images/image-20201231180750140.png" alt="image-20201231180750140" style="zoom: 50%;" />
 
 3. 尝试1 and/or 1=1，发现返回结果显示`SQL Injection Checked`，说明会检查关键字。利用burpsuite Intruder进行fuzz，探测后端会过滤哪些关键字。关键字列表参考[fuzz.txt](./script/fuzz.txt)。
 
 4. 注意在进行fuzz时，按照下面的格式进行，如果直接将关键字作为参数传入，则后端会直接返回bool(false)。
 
-   <img src="images/image-20210101161102981.png" alt="image-20210101161102981" width="60%;" />
+   <img src="../images/image-20210101161102981.png" alt="image-20210101161102981" width="60%;" />
 
    fuzz结果如下，可以看出and or这些均被过滤，则可以考虑尝试^注入。
 
    以及union也被过滤，则不能简单使用union注入。
 
-   <img src="images/image-20210101161449759.png" alt="image-20210101161449759" width="50%;" />
+   <img src="../images/image-20210101161449759.png" alt="image-20210101161449759" width="50%;" />
 
 5. 尝试1^1^1，发现成功，说明异或注入这条路可以走通。
 
-   <img src="images/image-20210101161947853.png" alt="image-20210101161947853" width="70%;" />
+   <img src="../images/image-20210101161947853.png" alt="image-20210101161947853" width="70%;" />
 
    使用下面的脚本进行布尔型注入（与FinalSQL类似）。
 
