@@ -7,11 +7,6 @@ task bwa_mem_tool {
   output {
     File sam1 = "/tmp/0518/log.txt"
   }
-  runtime {
-    docker: "registry.cn-hangzhou.aliyuncs.com/plugins/wes-tools:v3"
-    memory: "2GB"
-    cpu: 1
-  }
 }
 workflow wf {
   call bwa_mem_tool
